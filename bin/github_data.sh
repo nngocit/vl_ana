@@ -1,18 +1,20 @@
-# commit to csv_data
 #!/usr/bin/env bash
 
+# Repository và thư mục liên quan
 URL=https://github.com/nngocit/vl_ana.git
 FOLDER=vietlott-data
 DATA_FOLDER=data
 USER="nngocit"
-EMAIl="xuanngocit@gmail.com"
+EMAIL="xuanngocit@gmail.com"
 
-# generate data file
-echo "pwd $(pwd)"
+# Log thư mục hiện tại
+echo "Current working directory: $(pwd)"
 
+# Cấu hình môi trường
 export PYTHONPATH="src"
 export LOGURU_LEVEL="INFO"
 
+# Generate data file
 python src/vietlott/cli/crawl.py keno
 python src/vietlott/cli/missing.py keno
 python src/vietlott/cli/crawl.py power_655
@@ -26,20 +28,19 @@ python src/vietlott/cli/missing.py 3d_pro
 
 python src/render_readme.py
 
-#if [[ ! -d "$FOLDER" ]] ; then
-#  git clone $URL $FOLDER
-#fi
+# Cấu hình Git
+git config user.name "$USER"
+git config user.email "$EMAIL"
 
-#cp -r $DATA_FOLDER $FOLDER/
-
-#cd $FOLDER
-#git pull
-
-# commit and push
-git config user.name "\'$USER\'"
-git config user.email "\'$EMAIl\'"
+# Kiểm tra trạng thái repository
 git status
-git add $DATA_FOLDER
-git add readme.md
-git commit -m "update data @ `date +%Y-%m-%d\ %H:%M:%S`"
-git push
+
+# Add và commit dữ liệu
+git add "$DATA_FOLDER" readme.md
+
+if git diff-index --quiet HEAD --; then
+  echo "No changes to commit."
+else
+  git commit -m "update data @ $(date '+%Y-%m-%d %H:%M:%S')"
+  git push
+fi
