@@ -14,7 +14,6 @@ if not API_KEY:
 # Cấu hình API key cho Gemini AI
 genai.configure(api_key=API_KEY)
 
-os.getenv('OPENAI_API_KEY')
 def _balance_long_df(df_: pd.DataFrame, n_splits: int = 20):
     """Chuyển đổi DataFrame dạng dài thành nhiều cột"""
     df_ = df_.reset_index()
