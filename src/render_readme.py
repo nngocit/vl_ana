@@ -23,37 +23,36 @@ if not API_KEY:
 
 # Cấu hình API key cho Gemini AI
 genai.configure(api_key=API_KEY)
+import pandas as pd
+
+
 def _balance_long_df(df_: pd.DataFrame, n_splits: int = 20):
-    """convert long dataframe to multiple columns"""
-    df_ = df_.reset_index()
+    """Convert long dataframe to multiple columns."""
+    # Reset index một lần, không cần nhiều lần
+    df_ = df_.reset_index(drop=True)
     df_["result"] = df_["result"].astype(str)
 
-    # Check if 'count' column exists, and create it if it doesn't
+    # Kiểm tra và tạo cột 'count' nếu chưa có
     if 'count' not in df_.columns:
         df_['count'] = df_.groupby('result')['result'].transform('count')
 
     df_["count"] = df_["count"].astype(str)
 
-    final = None
+    # Chia DataFrame thành các phần nhỏ và xây dựng kết quả
+    result_parts = []
+    for i in range(0, len(df_), n_splits):
+        # Lấy phần nhỏ của DataFrame
+        dd = df_.iloc[i:i + n_splits]
 
-    for i in range(len(df_) // n_splits + 1):
-        dd = df_.iloc[i * n_splits : (i + 1) * n_splits]
+        # Thêm phần đã chia vào danh sách kết quả, thêm dòng trống giữa các nhóm
+        if result_parts:
+            result_parts.append(pd.DataFrame([None] * len(dd), columns=["-"]))
+        result_parts.append(dd)
 
-        if final is None:
-            final = dd
-        else:
-            final = pd.concat(
-                [
-                    final.reset_index(drop=True),
-                    pd.DataFrame([None] * len(dd), columns=["-"]),
-                    dd.reset_index(drop=True),
-                ],
-                axis="columns",
-            )
-    final = final.fillna("")
+    # Nối tất cả các phần lại với nhau theo chiều ngang
+    final = pd.concat(result_parts, axis="columns").fillna("")
 
     return final
-
 
 
 def read_data(data_dir: Path):
