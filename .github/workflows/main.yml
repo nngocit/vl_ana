@@ -1,0 +1,29 @@
+name: Cap nhat du lieu tu vietlot...
+
+on:
+  push:
+    branches: master
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron: '4 1,6,9,10,11,12,15-17 * * *' # Chạy vào phút 0 của 1h, 6h, 9h, 10h3, 11h, 12h và từ 15h đến 17h
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        python-version: [ 3.11.4 ]
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: 'pip'
+      - name: Install dependencies
+        run: |
+          python -m pip install -r requirements.txt
+      - run: bash ./bin/github_data.sh
