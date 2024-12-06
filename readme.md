@@ -1,41 +1,14 @@
 # Vietlot data
 
-Data crawling from https://vietlott.vn/, results for products:
-- [6/55](https://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/655)
-- [6/45](https://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/645)
-- [Keno](https://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/winning-number-keno)
-- [Max 3D](https://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/max-3d)
-- [Max 3D Pro](https://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/max-3dpro)
-
-## Table of content
-- [Vietlot data](#vietlot-data)
-  * [Predictions (just for testing, not a financial advice)](#predictions--just-for-testing--not-a-financial-advice-)
-    + [random](#random)
-  * [raw details 6/55](#raw-details-6-55)
-  * [stats 6/55 all time](#stats-6-55-all-time)
-  * [stats 6/55 -15d](#stats-6-55--15d)
-  * [stats 6/55 -30d](#stats-6-55--30d)
-  * [stats 6/55 -60d](#stats-6-55--60d)
-  * [stats 6/55 -90d](#stats-6-55--90d)
-- [Install](#install)
-  * [via pip](#via-pip)
-  * [cli](#cli)
-    + [crawl](#crawl)
-    + [Backfill missing data](#backfill-missing-data)
-
-
-## Predictions (just for testing, not a financial advice)
-These are backtest results for the strategies I have tested (just the abstract method at the moment, you can't predict lotery lol)
 
 ### random strategy
 predicted: 20 / day (20 tickets perday or 200,000 vnd)
 predicted corrected:
-|      | date       | result                    | predicted              |
-|-----:|:-----------|:--------------------------|:-----------------------|
-| 1549 | 2024-05-21 | [1, 2, 14, 32, 33, 41, 4] | [4, 1, 41, 35, 14, 32] | 
+| date   | result   | predicted   |
+|--------|----------|-------------| 
 
-## raw details 6/55 last 10 days
-| date       |    id | result                       |   page | process_time               |
+# ## raw details 6/55 last 10 days
+# | date       |    id | result                       |   page | process_time               |
 |:-----------|------:|:-----------------------------|-------:|:---------------------------|
 | 2024-11-16 | 01114 | [16, 22, 33, 37, 39, 51, 54] |      0 | 2024-11-16 14:07:21.034678 |
 | 2024-11-14 | 01113 | [12, 25, 37, 40, 49, 52, 31] |      0 | 2024-11-14 14:09:18.242315 |
@@ -70,54 +43,54 @@ predicted corrected:
 |       18 |     144 | 1.85 |     |       38 |     134 | 1.72 |     |          |         |      |
 |       19 |     139 | 1.78 |     |       39 |     131 | 1.68 |     |          |         |      |
 |       20 |     154 | 1.98 |     |       40 |     153 | 1.96 |     |          |         |      |
-## stats 6/55 -15d
-|   result |   count |    % | -   | result   | count   | %    |
+# ## stats 6/55 -15d
+# |   result |   count |    % | -   | result   | count   | %    |
 |---------:|--------:|-----:|:----|:---------|:--------|:-----|
-|        1 |       1 | 2.38 |     | 37       | 2       | 4.76 |
-|        6 |       1 | 2.38 |     | 39       | 2       | 4.76 |
-|        7 |       1 | 2.38 |     | 40       | 2       | 4.76 |
-|        9 |       2 | 4.76 |     | 41       | 1       | 2.38 |
-|       11 |       1 | 2.38 |     | 43       | 1       | 2.38 |
-|       12 |       1 | 2.38 |     | 45       | 1       | 2.38 |
-|       14 |       1 | 2.38 |     | 46       | 1       | 2.38 |
-|       16 |       1 | 2.38 |     | 49       | 2       | 4.76 |
-|       20 |       1 | 2.38 |     | 50       | 1       | 2.38 |
-|       21 |       1 | 2.38 |     | 51       | 3       | 7.14 |
-|       22 |       1 | 2.38 |     | 52       | 1       | 2.38 |
-|       24 |       1 | 2.38 |     | 54       | 2       | 4.76 |
-|       25 |       1 | 2.38 |     |          |         |      |
-|       26 |       1 | 2.38 |     |          |         |      |
-|       29 |       1 | 2.38 |     |          |         |      |
-|       31 |       2 | 4.76 |     |          |         |      |
-|       33 |       2 | 4.76 |     |          |         |      |
-|       34 |       1 | 2.38 |     |          |         |      |
-|       35 |       1 | 2.38 |     |          |         |      |
-|       36 |       1 | 2.38 |     |          |         |      |
-## stats 6/55 -30d
-|   result |   count |    % | -   | result   | count   | %    |
+|        1 |       1 | 2.86 |     | 40       | 2       | 5.71 |
+|        6 |       1 | 2.86 |     | 41       | 1       | 2.86 |
+|        9 |       1 | 2.86 |     | 43       | 1       | 2.86 |
+|       11 |       1 | 2.86 |     | 45       | 1       | 2.86 |
+|       12 |       1 | 2.86 |     | 49       | 1       | 2.86 |
+|       14 |       1 | 2.86 |     | 50       | 1       | 2.86 |
+|       16 |       1 | 2.86 |     | 51       | 3       | 8.57 |
+|       20 |       1 | 2.86 |     | 52       | 1       | 2.86 |
+|       21 |       1 | 2.86 |     | 54       | 1       | 2.86 |
+|       22 |       1 | 2.86 |     |          |         |      |
+|       24 |       1 | 2.86 |     |          |         |      |
+|       25 |       1 | 2.86 |     |          |         |      |
+|       26 |       1 | 2.86 |     |          |         |      |
+|       29 |       1 | 2.86 |     |          |         |      |
+|       31 |       1 | 2.86 |     |          |         |      |
+|       33 |       2 | 5.71 |     |          |         |      |
+|       34 |       1 | 2.86 |     |          |         |      |
+|       35 |       1 | 2.86 |     |          |         |      |
+|       37 |       2 | 5.71 |     |          |         |      |
+|       39 |       2 | 5.71 |     |          |         |      |
+# ## stats 6/55 -30d
+# |   result |   count |    % | -   | result   | count   | %    |
 |---------:|--------:|-----:|:----|:---------|:--------|:-----|
-|        1 |       1 | 2.38 |     | 37       | 2       | 4.76 |
-|        6 |       1 | 2.38 |     | 39       | 2       | 4.76 |
-|        7 |       1 | 2.38 |     | 40       | 2       | 4.76 |
-|        9 |       2 | 4.76 |     | 41       | 1       | 2.38 |
-|       11 |       1 | 2.38 |     | 43       | 1       | 2.38 |
-|       12 |       1 | 2.38 |     | 45       | 1       | 2.38 |
-|       14 |       1 | 2.38 |     | 46       | 1       | 2.38 |
-|       16 |       1 | 2.38 |     | 49       | 2       | 4.76 |
-|       20 |       1 | 2.38 |     | 50       | 1       | 2.38 |
-|       21 |       1 | 2.38 |     | 51       | 3       | 7.14 |
-|       22 |       1 | 2.38 |     | 52       | 1       | 2.38 |
-|       24 |       1 | 2.38 |     | 54       | 2       | 4.76 |
-|       25 |       1 | 2.38 |     |          |         |      |
-|       26 |       1 | 2.38 |     |          |         |      |
-|       29 |       1 | 2.38 |     |          |         |      |
-|       31 |       2 | 4.76 |     |          |         |      |
-|       33 |       2 | 4.76 |     |          |         |      |
-|       34 |       1 | 2.38 |     |          |         |      |
-|       35 |       1 | 2.38 |     |          |         |      |
-|       36 |       1 | 2.38 |     |          |         |      |
-## stats 6/55 -60d
-|   result |   count |    % | -   |   result |   count |    % | -   | result   | count   | %    |
+|        1 |       1 | 2.86 |     | 40       | 2       | 5.71 |
+|        6 |       1 | 2.86 |     | 41       | 1       | 2.86 |
+|        9 |       1 | 2.86 |     | 43       | 1       | 2.86 |
+|       11 |       1 | 2.86 |     | 45       | 1       | 2.86 |
+|       12 |       1 | 2.86 |     | 49       | 1       | 2.86 |
+|       14 |       1 | 2.86 |     | 50       | 1       | 2.86 |
+|       16 |       1 | 2.86 |     | 51       | 3       | 8.57 |
+|       20 |       1 | 2.86 |     | 52       | 1       | 2.86 |
+|       21 |       1 | 2.86 |     | 54       | 1       | 2.86 |
+|       22 |       1 | 2.86 |     |          |         |      |
+|       24 |       1 | 2.86 |     |          |         |      |
+|       25 |       1 | 2.86 |     |          |         |      |
+|       26 |       1 | 2.86 |     |          |         |      |
+|       29 |       1 | 2.86 |     |          |         |      |
+|       31 |       1 | 2.86 |     |          |         |      |
+|       33 |       2 | 5.71 |     |          |         |      |
+|       34 |       1 | 2.86 |     |          |         |      |
+|       35 |       1 | 2.86 |     |          |         |      |
+|       37 |       2 | 5.71 |     |          |         |      |
+|       39 |       2 | 5.71 |     |          |         |      |
+# ## stats 6/55 -60d
+# |   result |   count |    % | -   |   result |   count |    % | -   | result   | count   | %    |
 |---------:|--------:|-----:|:----|---------:|--------:|-----:|:----|:---------|:--------|:-----|
 |        1 |       1 | 0.79 |     |       25 |       3 | 2.38 |     | 45       | 1       | 0.79 |
 |        2 |       1 | 0.79 |     |       26 |       4 | 3.17 |     | 46       | 3       | 2.38 |
@@ -139,8 +112,8 @@ predicted corrected:
 |       22 |       2 | 1.59 |     |       42 |       2 | 1.59 |     |          |         |      |
 |       23 |       1 | 0.79 |     |       43 |       3 | 2.38 |     |          |         |      |
 |       24 |       1 | 0.79 |     |       44 |       1 | 0.79 |     |          |         |      |
-## stats 6/55 -90d
-|   result |   count |    % | -   |   result |   count |    % | -   | result   | count   | %    |
+# ## stats 6/55 -90d
+# |   result |   count |    % | -   |   result |   count |    % | -   | result   | count   | %    |
 |---------:|--------:|-----:|:----|---------:|--------:|-----:|:----|:---------|:--------|:-----|
 |        1 |       2 | 0.92 |     |       21 |       3 | 1.38 |     | 41       | 7       | 3.23 |
 |        2 |       4 | 1.84 |     |       22 |       5 | 2.3  |     | 42       | 3       | 1.38 |
@@ -162,53 +135,4 @@ predicted corrected:
 |       18 |       4 | 1.84 |     |       38 |       4 | 1.84 |     |          |         |      |
 |       19 |       4 | 1.84 |     |       39 |       8 | 3.69 |     |          |         |      |
 |       20 |       4 | 1.84 |     |       40 |       5 | 2.3  |     |          |         |      |
-
-# How project works
-Since there are many people asked, I write this section.
-
-## Schedule
-The project is schedule automatically via Github Actions, run a script, fetch data and auto commit to Github. No server is required, I don't need to do anything.
-Details in [workflow file](https://github.com/vietvudanh/vietlott-data/blob/dffb2bcdfa860a0dfc3f2e22e269e6978d478965/.github/workflows/crawl.yaml#L8)
-
-## How crawling works
-I just inspected network packages sent between browser and server to find out how data is fetched and replicated that in Python code. 
-
-# Install
- 
-## via pip
-
-```shell
-pip install -i https://test.pypi.org/simple/ vietlott-data==0.1.3
-```
-
-## cli
-project provides two cli
-
-### crawl
-```shell
-Usage: vietlott-crawl [OPTIONS] PRODUCT
-
-  crawl a product with a given run date or from/to index page 
-
-Options:
-  --run-date TEXT
-  --index_from INTEGER  page index from run since we crawl by pagination the
-                        pages
-  --index_to INTEGER    page index from run since we crawl by pagination the
-                        pages
-  --help                Show this message and exit.
-```
-
-### Backfill missing data
-
-```shell
-Usage: vietlott-missing [OPTIONS] PRODUCT
-
-  detect_missing_data and run if needed :param ctx: context :param product:
-  product to run :param limit: number of pages to run :return:
-
-Options:
-  --limit INTEGER
-  --help           Show this message and exit.
-```
 
