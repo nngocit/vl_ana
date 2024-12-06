@@ -15,9 +15,14 @@ from pathlib import Path
 from vietlott.config.products import get_config
 from vietlott.model.strategy.random import RandomModel
 
+# Đọc API key từ biến môi trường
+API_KEY = os.getenv("GEMINI_API_KEY")
 
-# Cấu hình API key
-genai.configure(api_key="AIzaSyCFVp1vJ53OkxxC_FzALVuujuC8NzwOBsc")
+if not API_KEY:
+    raise ValueError("API key for Gemini AI is not set. Please configure the GEMINI_API_KEY environment variable.")
+
+# Cấu hình API key cho Gemini AI
+genai.configure(api_key=API_KEY)
 def _balance_long_df(df_: pd.DataFrame, n_splits: int = 20):
     """convert long dataframe to multiple columns"""
     df_ = df_.reset_index()
