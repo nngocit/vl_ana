@@ -1,11 +1,11 @@
 # commit to csv_data
 #!/usr/bin/env bash
 
-URL=https://github.com/vietvudanh/vietlott-data.git
+URL=https://github.com/nngocit/vl_ana.git
 FOLDER=vietlott-data
 DATA_FOLDER=data
-USER="Viet VU"
-EMAIl="vietvudanh@gmail.com"
+USER="nngocit"
+EMAIl="xuanngocit@gmail.com"
 
 # generate data file
 echo "pwd $(pwd)"
